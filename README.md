@@ -1,5 +1,5 @@
 # Cifrados en Arduino
-Este repositorio contiene ejemplos de código en Arduino para realizar diferentes tipos de cifrados: Morse, César, Escítala y Polybios. Estos cifrados son ideales para que los jóvenes sin experiencia previa en programación o Arduino puedan aprender sobre criptografía y lógica de programación básica.
+Este repositorio contiene ejemplos de código en Arduino para realizar diferentes tipos de cifrados: Morse, César, Escítala y Polybios.
 
 1. ## Cifrado de Morse
     El cifrado de Morse es un sistema de representación de letras y números mediante secuencias de puntos y rayas. Cada carácter se representa con una combinación única de puntos y rayas. En el código de Arduino proporcionado, encontrarás la función cifrarMorse() que convierte un mensaje de texto en código Morse y la función descifrarMorse() que realiza el proceso inverso.
