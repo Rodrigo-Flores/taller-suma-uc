@@ -104,12 +104,7 @@ void loop()
 {
   // const char text[] = "Hello World";
 
-  String mensaje;
-  Serial.println("Ingrese el mensaje: ");
-  while (!Serial.available())
-  {
-    // Esperar hasta que se ingrese el mensaje en el monitor serial
-  }
+  String mensaje = "Hello World";
   mensaje = Serial.readString();
   mensaje_transformado = cifrar(mensaje);
   // radio.write(&text, sizeof(text));
