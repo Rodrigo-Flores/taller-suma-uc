@@ -46,22 +46,8 @@ void setup()
 void loop()
 {
     // const char text[] = "Hello World";
-    String mensaje;
-    int clave;
-
-    Serial.println("Ingrese el mensaje: ");
-    while (!Serial.available())
-    {
-        // Esperar hasta que se ingrese el mensaje en el monitor serial
-    }
-    mensaje = Serial.readString();
-
-    Serial.println("Ingrese la clave de cifrado: ");
-    while (!Serial.available())
-    {
-        // Esperar hasta que se ingrese la clave en el monitor serial
-    }
-    clave = Serial.parseInt();
+    String mensaje = "Hello World";
+    int clave = 3;
 
     String mensaje_cifrado = cifrar(mensaje, clave);
 

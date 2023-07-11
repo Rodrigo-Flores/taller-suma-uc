@@ -48,13 +48,7 @@ void loop()
     String mensaje;
     radio.read(&mensaje, sizeof(mensaje));
 
-    int clave;
-    Serial.println("Ingrese la clave de cifrado: ");
-    while (!Serial.available())
-    {
-      // Esperar hasta que se ingrese la clave en el monitor serial
-    }
-    clave = Serial.parseInt();
+    int clave = 3;
 
     String mensaje_descifrado = descifrar(mensaje, clave);
 
