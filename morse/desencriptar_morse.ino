@@ -69,34 +69,11 @@ String descifrar(String mensaje_cifrado) {
 void setup() {
     Serial.begin(9600);
 
-    String mensaje;
-    int opcion;
+    String mensaje = "";
 
-    Serial.println("Ingrese el mensaje: ");
-    while (!Serial.available()) {
-        // Esperar hasta que se ingrese el mensaje en el monitor serial
-    }
-    mensaje = Serial.readString();
+    String mensaje_transformado = descifrar(mensaje);
+    Serial.println("Mensaje desencriptado: " + mensaje_transformado);
 
-    Serial.println("Elija una opción: ");
-    Serial.println("1. Cifrar mensaje en código Morse");
-    Serial.println("2. Descifrar mensaje en código Morse");
-
-    while (!Serial.available()) {
-        // Esperar hasta que se ingrese la opción en el monitor serial
-    }
-    opcion = Serial.parseInt();
-
-    String mensaje_transformado;
-    if (opcion == 1) {
-        mensaje_transformado = cifrar(mensaje);
-        Serial.println("Mensaje cifrado en código Morse: " + mensaje_transformado);
-    } else if (opcion == 2) {
-        mensaje_transformado = descifrar(mensaje);
-        Serial.println("Mensaje descifrado en código Morse: " + mensaje_transformado);
-    } else {
-        Serial.println("Opción no válida.");
-    }
 }
 
 void loop() {

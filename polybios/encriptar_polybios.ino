@@ -68,16 +68,9 @@ void setup() {
 void loop() {
   String mensaje_original = "HELLOWORLD";
 
-  Serial.print("Mensaje original: ");
-  Serial.println(mensaje_original);
-
   String mensaje_cifrado = cifrar(mensaje_original);
   Serial.print("Mensaje cifrado: ");
   Serial.println(mensaje_cifrado);
-
-  String mensaje_descifrado = descifrar(mensaje_cifrado);
-  Serial.print("Mensaje descifrado: ");
-  Serial.println(mensaje_descifrado);
 
   delay(5000);  // Esperar 5 segundos antes de volver a ejecutar el loop
 }
