@@ -24,26 +24,12 @@ String descifrar(String mensaje_cifrado, int clave) {
 void setup() {
     Serial.begin(9600);
 
-    String mensaje;
-    int clave;
-
-    Serial.println("Ingrese el mensaje: ");
-    while (!Serial.available()) {
-        // Esperar hasta que se ingrese el mensaje en el monitor serial
-    }
-    mensaje = Serial.readString();
-
-    Serial.println("Ingrese la clave de cifrado: ");
-    while (!Serial.available()) {
-        // Esperar hasta que se ingrese la clave en el monitor serial
-    }
-    clave = Serial.parseInt();
+    String mensaje = "Hola Mundo";
+    int clave = 3;
 
     String mensaje_cifrado = cifrar(mensaje, clave);
-    String mensaje_descifrado = descifrar(mensaje_cifrado, clave);
 
     Serial.println("Mensaje cifrado: " + mensaje_cifrado);
-    Serial.println("Mensaje descifrado: " + mensaje_descifrado);
 }
 
 void loop() {
