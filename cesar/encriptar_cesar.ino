@@ -1,37 +1,101 @@
 #include <Arduino.h>
+#include <string.h>
 
-// Función para cifrar el mensaje usando el cifrado de César
-String cifrar(String mensaje, int clave) {
+char characters[] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
+                     'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
+                     'U', 'V', 'W', 'X', 'Y', 'Z', '0', '1', '2', '3',
+                     '4', '5', '6', '7', '8', '9', ' '};
+
+const char *morseCodes[] = {".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..",
+                            ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.",
+                            "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--..", "-----",
+                            ".----", "..---", "...--", "....-", ".....", "-....", "--...", "---..", "----.", "/"};
+
+String cifrar(String mensaje)
+{
     String mensaje_cifrado = "";
 
-    for (int i = 0; i < mensaje.length(); i++) {
-        if (isAlpha(mensaje.charAt(i))) {
-            char caracter = isUpperCase(mensaje.charAt(i)) ? 'A' : 'a';
-            mensaje_cifrado += (char)(((mensaje.charAt(i) - caracter + clave) % 26) + caracter);
-        } else {
-            mensaje_cifrado += mensaje.charAt(i);
+    for (int i = 0; i < mensaje.length(); i++)
+    {
+        char caracter = toupper(mensaje.charAt(i));
+
+        if (caracter == ' ')
+        {
+            mensaje_cifrado += "/ ";
+        }
+        else
+        {
+            for (int j = 0; j < sizeof(characters); j++)
+            {
+                if (characters[j] == caracter)
+                {
+                    mensaje_cifrado += morseCodes[j];
+                    mensaje_cifrado += " ";
+                    break;
+                }
+            }
         }
     }
 
+    mensaje_cifrado += "/";
     return mensaje_cifrado;
 }
 
-// Función para descifrar el mensaje usando el cifrado de César
-String descifrar(String mensaje_cifrado, int clave) {
-    return cifrar(mensaje_cifrado, 26 - clave);
+String descifrar(String mensaje_cifrado)
+{
+    String mensaje_descifrado = "";
+    String morse = "";
+
+    for (int i = 0; i < mensaje_cifrado.length(); i++)
+    {
+        char caracter = mensaje_cifrado.charAt(i);
+
+        if (caracter != ' ')
+        {
+            morse += caracter;
+        }
+        else
+        {
+            if (morse == "/")
+            {
+                mensaje_descifrado += ' '; // Agregar espacio entre palabras
+            }
+            else
+            {
+                bool encontrado = false;
+                for (int j = 0; j < sizeof(morseCodes); j++)
+                {
+                    if (strcmp(morseCodes[j], morse.c_str()) == 0)
+                    {
+                        mensaje_descifrado += characters[j];
+                        encontrado = true;
+                        break;
+                    }
+                }
+                if (!encontrado)
+                {
+                    mensaje_descifrado += 'e'; // Caracter desconocido
+                }
+            }
+            morse = "";
+        }
+    }
+
+    return mensaje_descifrado;
 }
 
-void setup() {
+void setup()
+{
     Serial.begin(9600);
-
-    String mensaje = "Hola Mundo";
-    int clave = 3;
-
-    String mensaje_cifrado = cifrar(mensaje, clave);
-
-    Serial.println("Mensaje cifrado: " + mensaje_cifrado);
 }
 
-void loop() {
-    // El código principal se ejecuta en el loop solo una vez
+void loop()
+{
+    if (Serial.available())
+    {
+        String mensaje = "La Virgen";
+        String mensaje_transformado = cifrar(mensaje);
+        Serial.println("Mensaje desencriptado: " + mensaje_transformado);
+        Serial.readStringUntil('\n');
+    }
 }
