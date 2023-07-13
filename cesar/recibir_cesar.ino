@@ -42,16 +42,10 @@ void loop()
 {
   if (radio.available())
   {
-    // char text[32] = "";
-    // radio.read(&text, sizeof(text));
-
     String mensaje;
     radio.read(&mensaje, sizeof(mensaje));
-
     int clave = 3;
-
     String mensaje_descifrado = descifrar(mensaje, clave);
-
     Serial.println("Mensaje descifrado: " + mensaje_descifrado);
   }
 }

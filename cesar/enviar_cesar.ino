@@ -45,11 +45,10 @@ void setup()
 
 void loop()
 {
-    // const char text[] = "Hello World";
     String mensaje = "Hello World";
     int clave = 3;
     String mensaje_cifrado = cifrar(mensaje, clave);
-    Serial.println("Mensaje cifrado: " + mensaje_cifrado);
+    Serial.println("[ ok ]" + mensaje + " -> "  + mensaje_cifrado);
     radio.write(&text, sizeof(text));
     delay(1000);
 }
