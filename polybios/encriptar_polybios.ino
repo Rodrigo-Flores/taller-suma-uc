@@ -87,8 +87,8 @@ void loop()
 {
   if (Serial.available())
   {
-    String mensaje_original = "HELLOWORLD";
-    String mensaje_cifrado = cifrar(mensaje_original);
+    String mensaje = "HELLOWORLD";
+    String mensaje_cifrado = cifrar(mensaje);
     Serial.println(mensaje + " ->" + mensaje_cifrado);
     Serial.readStringUntil('\n');
   }
