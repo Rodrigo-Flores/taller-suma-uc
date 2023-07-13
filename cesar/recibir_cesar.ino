@@ -49,4 +49,5 @@ void loop()
   radio.read(&mensaje, sizeof(mensaje));
   int clave = 3;
   String mensaje_descifrado = descifrar(mensaje, clave);
+  Serial.println(mensaje + " ->" + mensaje_descifrado);
 }

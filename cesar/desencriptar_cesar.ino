@@ -39,7 +39,7 @@ void loop()
         String mensaje = "";
         int clave = 3;
         String mensaje_descifrado = descifrar(mensaje_cifrado, clave);
-        Serial.println("Mensaje descifrado: " + mensaje_descifrado);
+        Serial.println(mensaje + " ->" + mensaje_descifrado);
         Serial.readStringUntil('\n');
     }
 }

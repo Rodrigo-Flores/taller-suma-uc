@@ -102,9 +102,8 @@ void setup()
 
 void loop()
 {
-  // char text[32] = "";
   String mensaje;
-  mensaje_transformado = descifrar(mensaje);
-  // radio.read(&text, sizeof(text));
-  radio.read(&mensaje_transformado, sizeof(mensaje_transformado));
+  radio.read(&mensaje, sizeof(mensaje));
+  mensaje_descifrado = descifrar(mensaje);
+  Serial.println(mensaje + " ->" + mensaje_descifrado);
 }
