@@ -18,7 +18,7 @@ Este repositorio contiene el código que se usará durante los talleres SUMA UC.
 
 Dentro de cada carpeta, que tienen el nombre de cada cifrado, se encuentra su código correspondiente. La nomenclatura es la siguiente:
 
-- `encriptar_*.ino` es para encriptar un mensaje localmente
-- `desencriptar_*.ino` es para desencriptar un mensaje localmente
-- `enviar_*.ino` es para enviar un mensaje encriptado a través del NRF24L01+
-- `recibir_*.ino` es para enviar un mensaje encriptado a través del NRF24L01+
+- `encriptar_*.ino` es para encriptar un mensaje localmente.
+- `desencriptar_*.ino` es para desencriptar un mensaje localmente.
+- `enviar_*.ino` es para enviar un mensaje encriptado a través del NRF24L01+.
+- `recibir_*.ino` es para recibir un mensaje encriptado a través del NRF24L01+ y desencriptarlo.
