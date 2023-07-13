@@ -95,10 +95,9 @@ void setup()
 
 void loop()
 {
-  // const char text[] = "Hello World";
-  String mensaje_original = "HELLOWORLD";
-  String mensaje_cifrado = cifrar(mensaje_original);
-  // radio.write(&text, sizeof(text));
+  String mensaje = "HELLOWORLD";
+  String mensaje_cifrado = cifrar(mensaje);
   radio.write(&mensaje_cifrado, sizeof(mensaje_cifrado));
+  Serial.println("[ ok ]" + mensaje + " -> " + mensaje_cifrado);
   delay(1000);
 }
