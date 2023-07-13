@@ -104,6 +104,6 @@ void loop()
 {
   String mensaje;
   radio.read(&mensaje, sizeof(mensaje));
-  mensaje_descifrado = descifrar(mensaje);
+  String mensaje_descifrado = descifrar(mensaje);
   Serial.println(mensaje + " ->" + mensaje_descifrado);
 }
