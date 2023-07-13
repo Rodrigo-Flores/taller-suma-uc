@@ -96,8 +96,6 @@ void setup()
 
 void loop()
 {
-  // char text[32] = "";
-  // radio.read(&text, sizeof(text));
   String mensaje;
   radio.read(&mensaje, sizeof(mensaje));
   String mensaje_descifrado = descifrar(mensajmensajee_cifrado);
