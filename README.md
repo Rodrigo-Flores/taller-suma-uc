@@ -22,7 +22,7 @@ Dentro de cada carpeta, que tienen el nombre de cada cifrado, se encuentra su c�
 - `desencriptar_*.ino` es para desencriptar un mensaje localmente.
 
 
-Además, en la carpeta `tranceptor` se encuentra:
+Además, en la carpeta *tranceptor* se encuentra:
 
 - `enviar.ino` es para enviar un mensaje a través del NRF24L01+.
 - `recibir.ino` es para recibir un mensaje a través del NRF24L01+ y desencriptarlo.
