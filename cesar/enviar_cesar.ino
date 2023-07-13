@@ -48,7 +48,7 @@ void loop()
     String mensaje = "Hello World";
     int clave = 3;
     String mensaje_cifrado = cifrar(mensaje, clave);
-    Serial.println("[ ok ]" + mensaje + " -> " + mensaje_cifrado);
     radio.write(&text, sizeof(text));
+    Serial.println("[ ok ]" + mensaje + " -> " + mensaje_cifrado);
     delay(1000);
 }
