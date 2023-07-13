@@ -4,26 +4,31 @@
 #include <Arduino.h>
 
 // Función para cifrar el mensaje usando el cifrado de César
-String cifrar(String mensaje, int clave) {
-    String mensaje_cifrado = "";
+String cifrar(String mensaje, int clave)
+{
+  String mensaje_cifrado = "";
 
-    for (int i = 0; i < mensaje.length(); i++) {
-        if (isAlpha(mensaje.charAt(i))) {
-            char caracter = isUpperCase(mensaje.charAt(i)) ? 'A' : 'a';
-            mensaje_cifrado += (char)(((mensaje.charAt(i) - caracter + clave) % 26) + caracter);
-        } else {
-            mensaje_cifrado += mensaje.charAt(i);
-        }
+  for (int i = 0; i < mensaje.length(); i++)
+  {
+    if (isAlpha(mensaje.charAt(i)))
+    {
+      char caracter = isUpperCase(mensaje.charAt(i)) ? 'A' : 'a';
+      mensaje_cifrado += (char)(((mensaje.charAt(i) - caracter + clave) % 26) + caracter);
     }
+    else
+    {
+      mensaje_cifrado += mensaje.charAt(i);
+    }
+  }
 
-    return mensaje_cifrado;
+  return mensaje_cifrado;
 }
 
 // Función para descifrar el mensaje usando el cifrado de César
-String descifrar(String mensaje_cifrado, int clave) {
-    return cifrar(mensaje_cifrado, 26 - clave);
+String descifrar(String mensaje_cifrado, int clave)
+{
+  return cifrar(mensaje_cifrado, 26 - clave);
 }
-
 
 RF24 radio(7, 8); // CE, CSN
 
@@ -40,12 +45,8 @@ void setup()
 
 void loop()
 {
-  if (radio.available())
-  {
-    String mensaje;
-    radio.read(&mensaje, sizeof(mensaje));
-    int clave = 3;
-    String mensaje_descifrado = descifrar(mensaje, clave);
-    Serial.println("Mensaje descifrado: " + mensaje_descifrado);
-  }
+  String mensaje;
+  radio.read(&mensaje, sizeof(mensaje));
+  int clave = 3;
+  String mensaje_descifrado = descifrar(mensaje, clave);
 }
