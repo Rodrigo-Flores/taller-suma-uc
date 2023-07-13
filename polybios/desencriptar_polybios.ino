@@ -55,8 +55,8 @@ String descifrar(const String &mensaje_cifrado)
     {
       if (isdigit(mensaje_cifrado[i]) && isdigit(mensaje_cifrado[i + 1]))
       {
-        int fila = mensaje_cifrado[i].toInt();
-        int columna = mensaje_cifrado[i + 1].toInt();
+        int fila = mensaje_cifrado[i] - '0';
+        int columna = mensaje_cifrado[i + 1] - '0';
 
         if (fila >= 1 && fila <= 5 && columna >= 1 && columna <= 5)
         {
