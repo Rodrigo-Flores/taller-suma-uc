@@ -94,8 +94,8 @@ void loop()
     if (Serial.available())
     {
         String mensaje = "La Virgen";
-        String mensaje_transformado = cifrar(mensaje);
-        Serial.println("Mensaje desencriptado: " + mensaje_transformado);
+        String mensaje_cifrado = cifrar(mensaje);
+        Serial.println(mensaje + " ->" + mensaje_cifrado);
         Serial.readStringUntil('\n');
     }
 }
