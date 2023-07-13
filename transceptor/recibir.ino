@@ -18,6 +18,7 @@ void loop() {
   if (radio.available()) {
     char text[32] = "";
     radio.read(&text, sizeof(text));
+    Serial.print("Mensaje recibido: ");
     Serial.println(text);
   }
 }
