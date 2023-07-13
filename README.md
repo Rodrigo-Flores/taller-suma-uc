@@ -1,5 +1,10 @@
 # Cifrados en Arduino
-Este repositorio contiene el código que se usará durante los talleres SUMA UC.
+Este repositorio contiene el código que se usará durante los talleres SUMA UC. Se realizará un envío de paquetes cifrados a través del módulo de radiofrecuencia NRF24L01+, haciendo uso de una placa de arduino mega.
+
+## Materiales
+1. NRF24L01+.
+2. Arduino mega.
+3. Cable USB A macho y USB micro macho.
 
 ## Diseño de Conexiones con Arduino y Módulo de Radiofrecuencia
 ![connection](conn.png)
@@ -11,10 +16,8 @@ Este repositorio contiene el código que se usará durante los talleres SUMA UC.
 4. Escítala (sin código)
 
 ## Cómo usar el código
-Tienes dos opciones para utilizar el código proporcionado:
-
-1. Descargar el repositorio completo: Puedes descargar el repositorio completo desde aquí. El repositorio contiene todos los archivos y ejemplos necesarios para ejecutar los cifrados en tu placa Arduino.
-
-2. Copiar y pegar el código: Si no deseas descargar el repositorio completo, puedes copiar y pegar el código de cada cifrado directamente en tu entorno de desarrollo de Arduino. Solo asegúrate de copiar todas las funciones necesarias para el cifrado o descifrado específico que deseas utilizar.
-
-¡Disfruta aprendiendo sobre criptografía y Arduino con estos ejemplos de cifrado! Si tienes alguna pregunta o inquietud, no dudes en consultar la documentación adicional en el repositorio o buscar más recursos en línea.
+Dentro de cada carpeta, que tienen el nombre de cada cifrado, se encuentra su código correspondiente. La nomenclatura es la siguiente:
+- `encriptar_*.ino` es para encriptar un mensaje localmente
+- `desencriptar_*.ino` es para desencriptar un mensaje localmente
+- `enviar_*.ino` es para enviar un mensaje encriptado a través del NRF24L01+
+- `recibir_*.ino` es para enviar un mensaje encriptado a través del NRF24L01+
