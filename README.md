@@ -5,9 +5,8 @@ Este repositorio contiene el código que se usará durante los talleres SUMA UC.
 
 ## Materiales
 
-1. NRF24L01+.
-2. Arduino mega.
-3. Cable USB A macho y USB micro macho.
+1. NRF24L01+, módulo de radiofrecuencia.
+2. Arduino mega, controlador.
 
 
 ## Diseño de Conexiones con Arduino y Módulo de Radiofrecuencia
