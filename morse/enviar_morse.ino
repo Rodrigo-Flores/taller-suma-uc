@@ -103,8 +103,8 @@ void setup()
 void loop()
 {
   String mensaje = "Hello World";
-  mensaje_transformado = cifrar(mensaje);
-  radio.write(&mensaje_transformado, sizeof(mensaje_transformado));
-  Serial.println("[ ok ]" + mensaje + " -> " + mensaje_transformado);
+  String mensaje_cifrado = cifrar(mensaje);
+  radio.write(&mensaje_cifrado, sizeof(mensaje_cifrado));
+  Serial.println("[ ok ]" + mensaje + " -> " + mensaje_cifrado);
   delay(1000);
 }
