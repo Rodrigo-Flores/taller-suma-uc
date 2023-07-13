@@ -5,8 +5,8 @@ Este repositorio contiene el código que se usará durante los talleres SUMA UC.
 
 ## Materiales
 
-1. NRF24L01+, módulo de radiofrecuencia.
-2. Arduino mega, controlador.
+1. [NRF24L01+](https://www.amazon.com/-/es/Transmisión-E34-2G4D27D-Transceptor-inalámbrico-inteligente/dp/B09MVV8XBX?th=1)
+2. [Arduino Mega](https://arduino.cl/arduino-mega-2560/)
 
 
 ## Diseño de Conexiones con Arduino y Módulo de Radiofrecuencia
