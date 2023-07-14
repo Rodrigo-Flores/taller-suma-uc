@@ -94,7 +94,7 @@ void loop()
   if (Serial.available())
   {
     String mensaje = "";
-    String mensaje_transformado = descifrar(mensaje);
+    String mensaje_descifrado = descifrar(mensaje);
     Serial.println(mensaje + " ->" + mensaje_descifrado);
     Serial.readStringUntil('\n');
   }
