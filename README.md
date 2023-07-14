@@ -25,4 +25,4 @@ Dentro de cada carpeta, que tienen el nombre de cada cifrado, se encuentra su c�
 Además, en la carpeta *tranceptor* se encuentra:
 
 - `enviar.ino` es para enviar un mensaje a través del NRF24L01+.
-- `recibir.ino` es para recibir un mensaje a través del NRF24L01+ y desencriptarlo.
+- `recibir.ino` es para recibir un mensaje a través del NRF24L01+.
