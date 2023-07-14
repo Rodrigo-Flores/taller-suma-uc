@@ -16,9 +16,9 @@ void setup() {
 
 void loop() {
   if (radio.available()) {
-    char text[32] = "";
+    char text[32] = ""; // esto se mantiene vacío, pues se va a recibir información
     radio.read(&text, sizeof(text));
-    Serial.print("Mensaje recibido: ");
+    Serial.print("[ ok ] -> ");
     Serial.println(text);
   }
 }

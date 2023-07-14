@@ -39,7 +39,7 @@ void loop()
     String mensaje = "CAMBIAR MENSAJE AQUÍ";
     int clave = 3;
     String mensaje_cifrado = cifrar(mensaje, clave);
-    Serial.println(mensaje + " ->" + mensaje_cifrado);
+    Serial.println(mensaje + " -> " + mensaje_cifrado);
     Serial.readStringUntil('\n');
   }
 }

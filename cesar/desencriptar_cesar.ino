@@ -36,10 +36,10 @@ void loop()
 {
   if (Serial.available())
   {
-    String mensaje = "";
+    String mensaje = "CAMBIAR MENSAJE AQUÍ";
     int clave = 3;
     String mensaje_descifrado = descifrar(mensaje, clave);
-    Serial.println(mensaje + " ->" + mensaje_descifrado);
+    Serial.println(mensaje + " -> " + mensaje_descifrado);
     Serial.readStringUntil('\n');
   }
 }
